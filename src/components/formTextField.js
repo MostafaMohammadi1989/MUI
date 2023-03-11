@@ -1,11 +1,29 @@
 import * as React from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import styled, { css } from "styled-components";
+import { useState } from "react";
 
 export default function FormTextField() {
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const handelChange = (e) => {
+    setInput((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    console.log(input);
+  };
   return (
     <div>
       <Box
+        onSubmit={handelSubmit}
         noValidate
         autoComplete="off"
         component="form"
@@ -17,6 +35,9 @@ export default function FormTextField() {
         }}
       >
         <TextField
+          name="name"
+          value={input.name}
+          onChange={handelChange}
           id="username"
           type={"text"}
           placeholder="Username"
@@ -25,6 +46,9 @@ export default function FormTextField() {
           required
         />
         <TextField
+          name="email"
+          value={input.email}
+          onChange={handelChange}
           id="email"
           type={"email"}
           placeholder="Email"
@@ -33,6 +57,9 @@ export default function FormTextField() {
           required
         />
         <TextField
+          name="password"
+          value={input.password}
+          onChange={handelChange}
           id="password"
           type={"password"}
           placeholder="Password"
