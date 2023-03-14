@@ -5,18 +5,21 @@ import * as React from "react";
 // import TextFields from "./components/TextField";
 // import CheckBox from "./components/checkbox";
 // import Select from "./components/select";
+// import RadioButton from "./components/radioGroup";
+
 import Formtextfield from "./components/formTextField";
 
 function App() {
   return (
     <div className="App">
+      <Formtextfield />
       {/* <Typography /> */}
       {/* <Button /> */}
       {/* <Box /> */}
       {/* <TextFields /> */}
       {/* <CheckBox /> */}
       {/* <Select /> */}
-      <Formtextfield />
+      {/* <RadioButton /> */}
     </div>
   );
 }

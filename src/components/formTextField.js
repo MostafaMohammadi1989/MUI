@@ -11,6 +11,9 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  Radio,
+  RadioGroup,
+  FormLabel,
 } from "@mui/material";
 import styled, { css } from "styled-components";
 import { useState } from "react";
@@ -22,6 +25,7 @@ export default function FormTextField() {
     password: "",
     subscribe: true,
     age: 0,
+    gender: "",
   });
   const handelChange = (e) => {
     setInput((prevState) => ({
@@ -110,7 +114,18 @@ export default function FormTextField() {
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>
         </FormControl>
-
+        <FormControl>
+          <FormLabel>Gender</FormLabel>
+          <RadioGroup name="gender" onChange={handelChange}>
+            <FormControlLabel
+              value="female"
+              control={<Radio />}
+              label="Female"
+            />
+            <FormControlLabel value="male" control={<Radio />} label="Male" />
+            <FormControlLabel value="other" control={<Radio />} label="Other" />
+          </RadioGroup>
+        </FormControl>
         <Button variant="outlined" type="submit">
           <Typography variant="h5" component="h5">
             Submit Form
