@@ -4,6 +4,7 @@ import * as React from "react";
 // import Box from "./components/boxTest";
 // import TextFields from "./components/TextField";
 import Formtextfield from "./components/formTextField";
+import CheckBox from "./components/checkbox";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       {/* <Box /> */}
       {/* <TextFields /> */}
       <Formtextfield />
+      <CheckBox />
     </div>
   );
 }

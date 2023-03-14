@@ -1,5 +1,13 @@
 import * as React from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Typography,
+  Box,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@mui/material";
 import styled, { css } from "styled-components";
 import { useState } from "react";
 
@@ -8,6 +16,7 @@ export default function FormTextField() {
     name: "",
     email: "",
     password: "",
+    subscribe: true,
   });
   const handelChange = (e) => {
     setInput((prevState) => ({
@@ -67,6 +76,22 @@ export default function FormTextField() {
           label="Password"
           required
         />
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                defaultChecked
+                onChange={() =>
+                  setInput((prev) => ({
+                    ...prev,
+                    subscribe: !input.subscribe,
+                  }))
+                }
+              />
+            }
+            label="Subscribe"
+          />
+        </FormGroup>
         <Button variant="outlined" type="submit">
           <Typography variant="h5" component="h5">
             Submit Form
