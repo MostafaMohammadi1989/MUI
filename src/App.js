@@ -3,8 +3,9 @@ import * as React from "react";
 // import Button from "./components/buttonTest";
 // import Box from "./components/boxTest";
 // import TextFields from "./components/TextField";
+// import CheckBox from "./components/checkbox";
+// import Select from "./components/select";
 import Formtextfield from "./components/formTextField";
-import CheckBox from "./components/checkbox";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       {/* <Button /> */}
       {/* <Box /> */}
       {/* <TextFields /> */}
+      {/* <CheckBox /> */}
+      {/* <Select /> */}
       <Formtextfield />
-      <CheckBox />
     </div>
   );
 }

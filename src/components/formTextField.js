@@ -7,6 +7,10 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
 } from "@mui/material";
 import styled, { css } from "styled-components";
 import { useState } from "react";
@@ -17,6 +21,7 @@ export default function FormTextField() {
     email: "",
     password: "",
     subscribe: true,
+    age: 0,
   });
   const handelChange = (e) => {
     setInput((prevState) => ({
@@ -92,6 +97,20 @@ export default function FormTextField() {
             label="Subscribe"
           />
         </FormGroup>
+        <FormControl fullWidth>
+          <InputLabel>Age Emply</InputLabel>
+          <Select
+            name="age"
+            value={input.age}
+            label="Age Employ"
+            onChange={handelChange}
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+        </FormControl>
+
         <Button variant="outlined" type="submit">
           <Typography variant="h5" component="h5">
             Submit Form
